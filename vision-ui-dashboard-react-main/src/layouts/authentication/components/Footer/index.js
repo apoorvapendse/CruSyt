@@ -49,18 +49,8 @@ function Footer() {
             sx={{ textAlign: "center", fontWeight: "400 !important" }}
             color="text"
           >
-            @ 2021, Made with ❤️&nbsp;&nbsp;&nbsp; by{" "}
-            <VuiTypography
-              component="a"
-              variant="button"
-              href="#"
-              sx={{ textAlign: "center", fontWeight: "500 !important" }}
-              color="text"
-              mr="2px"
-            >
-              Simmmple
-            </VuiTypography>
-            &
+            @ 2023, Made with ❤️&nbsp;&nbsp;&nbsp;by{" "}
+            
             <VuiTypography
               ml="2px"
               mr="2px"
@@ -70,7 +60,7 @@ function Footer() {
               sx={{ textAlign: "center", fontWeight: "500 !important" }}
               color="text"
             >
-              Creative Tim
+              <a href="https://github.com/apoorvapendse" style={{color:"royalblue"}}>Apoorva Pendse</a>
             </VuiTypography>
             for a better web
           </VuiTypography>
