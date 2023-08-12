@@ -38,17 +38,7 @@ function Footer() {
           color="white"
         >
           @ 2023, Made with ❤️&nbsp;&nbsp;&nbsp; by{" "}
-          <VuiTypography
-            component="a"
-            variant="button"
-            href="https://simmmple.com/"
-            sx={{ textAlign: "center", fontWeight: "500 !important" }}
-            color="white"
-            mr="2px"
-          >
-            Simmmple
-          </VuiTypography>
-          &
+          
           <VuiTypography
             ml="2px"
             mr="2px"
