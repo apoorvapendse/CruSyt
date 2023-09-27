@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h1>Firebase Google Sign-In Example</h1>
+
 
     <!-- Button to trigger Google Sign-In -->
     <button id="googleSignInBtn">Sign in with Google</button>
@@ -51,7 +51,7 @@
                     const user = result.user;
 
                     // You can handle the signed-in user here (e.g., display user information).
-                    console.log('Signed in as:', user.displayName);
+                    console.log('Signed in as:', user);
                 })
                 .catch((error) => {
                     // Handle errors here (e.g., display an error message).
