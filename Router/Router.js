@@ -4,4 +4,5 @@ import * as controllers from "../Controllers/Controllers.js";
 const router = express.Router();
 
 router.get("/", controllers.homepageGet);
+router.get("/reddit-posts", controllers.homepageGet);
 export default router;
