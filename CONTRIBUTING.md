@@ -8,13 +8,13 @@ We appreciate your interest in helping us improve Crusyt. Whether you're a devel
 
 There are several ways you can contribute to Crusyt:
 
-1. **Code Contributions**: If you are a developer and want to contribute to the codebase, we welcome your [pull requests](https://github.com/your-username/crusyt/pulls). Whether you want to fix a bug, add a feature, or improve the documentation, your code contributions are highly appreciated.
+1. **Code Contributions**: If you are a developer and want to contribute to the codebase, we welcome your [pull requests](https://github.com/apoorvapendse/CruSyt/pulls). Whether you want to fix a bug, add a feature, or improve the documentation, your code contributions are highly appreciated.
 
 2. **CSS Expertise**: Crusyt could use help in improving its CSS to make the web application more visually appealing and user-friendly. If you have expertise in CSS or web design, your assistance in enhancing the user interface would be invaluable.
 
 3. **Issue Reporting**: If you encounter any issues, bugs, or have suggestions for improvements, please [open an issue](https://github.com/your-username/crusyt/issues) on our GitHub repository. Be sure to provide as much detail as possible to help us understand the problem.
 
-4. **Documentation**: Crusyt's documentation can always use improvement. If you find any errors or want to enhance the documentation, please submit a [pull request](https://github.com/your-username/crusyt/pulls).
+4. **Documentation**: Crusyt's documentation can always use improvement. If you find any errors or want to enhance the documentation, please submit a [pull request](https://github.com/apoorvapendse/crusyt/pulls).
 
 5. **NLP Expertise**: Crusyt relies heavily on Natural Language Processing (NLP) for sentiment analysis. If you have expertise in NLP and Node.js, your insights and assistance in improving our NLP capabilities would be invaluable.
 
@@ -59,7 +59,7 @@ If you're interested in contributing code to Crusyt, here are the steps to get s
     git push origin feature/your-feature-name
     ```
 
-9. **Create a Pull Request**: Finally, create a [pull request](https://github.com/your-username/crusyt/compare) from your forked repository to the main Crusyt repository. Be sure to provide a detailed description of your changes.
+9. **Create a Pull Request**: Finally, create a [pull request](https://github.com/apoorvapendse/CruSyt/compare) from your forked repository to the main Crusyt repository. Be sure to provide a detailed description of your changes.
 
 ## CSS and Design
 
@@ -73,7 +73,7 @@ Please note that we have a [Code of Conduct](CODE_OF_CONDUCT.md) in place. We ex
 
 If you have any questions, need clarification, or want to discuss your contributions further, feel free to reach out to us via:
 
-- [GitHub Issues](https://github.com/your-username/crusyt/issues)
+- [GitHub Issues](https://github.com/apoorvapendse/CruSyt/issues)
 - Email: your@email.com
 
 Thank you for your interest in contributing to Crusyt. We look forward to working with you!
