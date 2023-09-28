@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CruSyt-home</title>
+  <link rel="stylesheet" href="/login.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" />
+</head>
+
+<body>
+  <div class="desktop-1">
+    <div class="gradient-background"></div>
+    <div class="desktop-1-child"></div>
+    <div class="desktop-1-item"></div>
+    <b class="authentication-page">Authentication Page </b>
+    <div class="for-crusyt">For CruSyt</div>
+    <div class="desktop-1-inner"></div>
+    <div class="ellipse-div"></div>
+    <div class="desktop-1-child1"></div>
+    <div class="desktop-1-child2"></div>
+    <div class="rectangle-div"></div>
+    <div class="already-have-an-container">
+      <button id="googleSignInBtn">Sign in with Google</button>
+    </div>
+    <img class="flat-color-iconsgoogle" alt=""
+      src="https://image.similarpng.com/very-thumbnail/2020/06/Logo-google-icon-PNG.png" />
+  </div>
+  <!-- Firebase JavaScript SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+
+  <script>
+    // Firebase configuration (replace with your own config)
+    const firebaseConfig = {
+      apiKey: "AIzaSyBLtGtjaIXZKnb3HXWwUJ7rBdHjwtnOvKc",
+      authDomain: "crusyt-5d137.firebaseapp.com",
+      projectId: "crusyt-5d137",
+      storageBucket: "crusyt-5d137.appspot.com",
+      messagingSenderId: "43601306034",
+      appId: "1:43601306034:web:c1826605287db0a6c704ab",
+      measurementId: "G-2PMKYVX67H",
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Google Sign-In provider
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    // Get a reference to the Google Sign-In button
+    const googleSignInBtn = document.getElementById('googleSignInBtn');
+
+    // Add click event listener to the button
+    googleSignInBtn.addEventListener('click', () => {
+      // Sign in with Google
+      firebase.auth().signInWithPopup(provider)
+        .then((result) => {
+          // This gives you a Google Access Token. You can use it to access Google APIs.
+          const credential = result.credential;
+          const token = credential.accessToken;
+
+          // The signed-in user info.
+          const user = result.user;
+
+          // You can handle the signed-in user here (e.g., display user information).
+          console.log('Signed in as:', user);
+        })
+        .catch((error) => {
+          // Handle errors here (e.g., display an error message).
+          console.error('Error:', error);
+        });
+    });
+  </script>
+</body>
+
+</html>
