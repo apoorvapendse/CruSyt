@@ -22,7 +22,7 @@ There are several ways you can contribute to Crusyt:
 
 If you're interested in contributing code to Crusyt, here are the steps to get started:
 
-1. **Fork the Repository**: Start by [forking the Crusyt repository](https://github.com/your-username/crusyt/fork) to your GitHub account.
+1. **Fork the Repository**: Start by [forking the Crusyt repository](https://github.com/apoorvapendse/CruSyt/fork) to your GitHub account.
 
 2. **Clone the Repository**: Clone the forked repository to your local development environment.
 
