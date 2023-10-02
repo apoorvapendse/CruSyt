@@ -74,6 +74,6 @@ Please note that we have a [Code of Conduct](CODE_OF_CONDUCT.md) in place. We ex
 If you have any questions, need clarification, or want to discuss your contributions further, feel free to reach out to us via:
 
 - [GitHub Issues](https://github.com/apoorvapendse/CruSyt/issues)
-- Email: your@email.com
+- Email: apoorva.pendse221@vit.edu
 
 Thank you for your interest in contributing to Crusyt. We look forward to working with you!
