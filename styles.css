@@ -1,0 +1,23 @@
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border-radius: px;
+}
+
+.filter-icon {
+    padding: 10px 20px;
+}
+
+
+.filter-box {
+    border-radius: px;
+    
+}
+
+input.form-control {
+  flex: 1;
+  border: none;
+  outline: none;
+  border-radius: 20px 20px;
+}
