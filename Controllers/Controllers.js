@@ -2,5 +2,5 @@ const homepageGet = (req, res) => {
   res.render("homepage.ejs");
 };
 
-const redditPostsGet = (req, res) => {};
+const redditPostsGet = (req, res) => { };
 export { homepageGet };

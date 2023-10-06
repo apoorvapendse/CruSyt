@@ -1,18 +1,15 @@
-
 .search-box {
-    display: flex;
-    align-items: center;
-    border-radius: px;
+  display: flex;
+  align-items: center;
+  border-radius: px;
 }
 
 .filter-icon {
-    padding: 10px 20px;
+  padding: 10px 20px;
 }
 
-
 .filter-box {
-    border-radius: px;
-    
+  border-radius: px;
 }
 
 input.form-control {
