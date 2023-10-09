@@ -3,7 +3,7 @@ import cheerio from "cheerio";
 
 const url =
   "https://www.reddit.com/search/?q=mrf_tyres&type=comment&sort=top&rdt=48111";
-async function scrape() {
+export async function scrape() {
   try {
     const { data } = await axios.get(url);
     const $ = cheerio.load(data);
@@ -20,17 +20,19 @@ async function scrape() {
     let comment9 = $("#comment-content-9").text();
     let comment10 = $("#comment-content-10").text();
 
-    console.log(comment0);
-    console.log(comment1);
-    console.log(comment2);
-    console.log(comment3);
-    console.log(comment4);
-    console.log(comment5);
-    console.log(comment6);
-    console.log(comment7);
-    console.log(comment8);
-    console.log(comment9);
-    console.log(comment10);
+    return {
+      comment0,
+      comment1,
+      comment2,
+      comment3,
+      comment4,
+      comment5,
+      comment6,
+      comment7,
+      comment8,
+      comment9,
+      comment10,
+    };
   } catch (error) {
     console.log(error);
   }
