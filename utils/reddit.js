@@ -1,9 +1,8 @@
 import axios from "axios";
 import cheerio from "cheerio";
 
-const url =
-  "https://www.reddit.com/search/?q=mrf_tyres&type=comment&sort=top&rdt=48111";
-export async function scrape() {
+export async function scrape(searchTerm) {
+  const url = `https://www.reddit.com/search/?q=${searchTerm}_review&type=comment&sort=top&rdt=48111`;
   try {
     const { data } = await axios.get(url);
     const $ = cheerio.load(data);
