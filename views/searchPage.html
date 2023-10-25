@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <!-- CSS stylesheet included -->
+    <link rel="stylesheet" href="searchPage.css">
+</head>
+
+<body>
+    <div class="search-container">
+        <h1>Search Page</h1>
+
+        <!-- navigation bar -->
+        <nav>
+            <div class="navDiv">
+                <!-- search bar -->
+                <input type="text" id="searchInput" placeholder="Search...">
+
+                <!-- dropdown menu -->
+                <div class="drpdwn">
+                    <button class="drpbtn" onclick="toggleDropdown()">Menu</button>
+                    <div class="drpdwnContent" id="mydrpdwn">
+                        <a href="#" onclick="selectOption('Reddit')">Reddit</a>
+                        <a href="#" onclick="selectOption('Meta')">Meta</a>
+                        <a href="#" onclick="selectOption('X')">X</a>
+                    </div>
+                </div>
+                <button class="searchBtn" onclick="search()">Search</button>
+            </div>
+        </nav>
+
+        <!-- filter-container -->
+        <div class="filterContainer">
+            <label for="platformFilter" id="label">Filter by Platform:</label>
+            <select name="select" id="platformFilter">
+                <option value="all">All platforms</option>
+                <option value="windows">Windows</option>
+                <option value="mac">Mac</option>
+                <option value="linux">Linux</option>
+            </select>
+        </div>
+
+        <!-- search results -->
+        <div class="searchResults" id="searchResults">
+            Results
+        <!-- display search results here -->
+        </div>
+    </div>
+
+    <!-- include js file for handling search functionality -->
+    <script src="searchPage.js"></script>
+</body>
+
+</html>
