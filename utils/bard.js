@@ -8,7 +8,15 @@ let answer ;
 let child = exec(request, function(error, stdout, stderr) {
     
      let data = JSON.parse(stdout);
-     console.log(data.candidates[0].output)
+     let stringOne = data.candidates[0].output.replace("```","")
+     let stringTwo = stringOne.replace("json","")
+
+     stringTwo +=`"}]`
+
+     let object = JSON.parse(stringTwo)
+    //  console.log(object)
+    
+     object.map((item)=>console.log(item.review))
 
     console.log('stderr: ' + stderr);
 
