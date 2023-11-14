@@ -10,19 +10,44 @@ html {
   flex-direction: column;
 }
 form {
-  background-color: gray;
-  flex: 1;
+ 
+ background-image: url(https://cdn.pixabay.com/photo/2016/06/02/02/33/triangles-1430105_640.png);
+  width: 80%;
+  max-width: 2000px;
+  margin: auto;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 form input {
-  border-radius: 10px;
-  padding: 14px;
+  border-radius: 65px;
+  padding: 16px;
   outline: none;
-  border: none;
+  margin-bottom: 13px;
+  transition: border-color 0.3s;
+  width: 60%;
+  font-size: 1em;
+  border: 2px solid #f1ecec;
+  box-sizing: border-box;
 }
+
+form input::after {
+  content: '\1F50D';
+  font-size: 1.2em;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+  cursor: pointer;
+}
+
+form {
+  width: 60%;
+}
+
 form button {
   border-radius: 10px;
   padding: 10px;
@@ -35,3 +60,26 @@ form button:hover {
   box-shadow: 0 0 7px black;
   transform: translateY(6px);
 }
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 62px;
+  color: #0F044C;
+  margin-bottom: 80px;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  
+  background-image: url(https://static.vecteezy.com/system/resources/previews/007/045/965/non_2x/abstract-white-and-grey-pattern-background-design-abstract-graphic-design-white-and-grey-banner-pattern-background-web-template-abstract-white-wallpaper-abstract-white-background-free-vector.jpg);
+}
+.search-input {
+  font-family: 'Pacifico', cursive;
+  
+}
+
