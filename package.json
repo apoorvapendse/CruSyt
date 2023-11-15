@@ -12,6 +12,7 @@
   "dependencies": {
     "apos-to-lex-form": "^1.0.5",
     "axios": "^1.5.1",
+    "bard-ai": "^2.0.3",
     "body-parser": "^1.20.2",
     "cheerio": "^1.0.0-rc.12",
     "child_process": "^1.0.2",
@@ -22,6 +23,7 @@
     "firebase": "^10.4.0",
     "natural": "^6.7.2",
     "nodemon": "^3.0.1",
+    "openai": "^4.17.5",
     "snoowrap": "^1.23.0",
     "spelling-corrector": "^3.0.0",
     "stopword": "^2.0.8"

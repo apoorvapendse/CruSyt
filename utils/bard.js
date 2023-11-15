@@ -1,6 +1,7 @@
 import util from 'util';
 import { exec } from 'child_process';
 
+let searchTerm =  `macbook`
 let request = `curl -H 'Content-Type: application/json' -d '{ "prompt": { "text": "Give me 50 macbook reviews both good and bad in a json array "} }' "https://generativelanguage.googleapis.com/v1beta3/models/text-bison-001:generateText?key=AIzaSyBE-myxHyuWxQHJfIZXLYzILLVghP6nkhA"`;
 
 let answer ;
