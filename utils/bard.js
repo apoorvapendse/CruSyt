@@ -20,6 +20,7 @@ export async function getResults(searchTerm = "iphone") {
     jsonString += "}]";
 
     console.log(jsonString);
+    // TODO:  return json parsed object, still not working in some cases
   });
 }
 
