@@ -1,27 +1,26 @@
-import util from 'util';
-import { exec } from 'child_process';
+import { exec } from "child_process";
 
-let searchTerm =  `macbook`
-let request = `curl -H 'Content-Type: application/json' -d '{ "prompt": { "text": "Give me 50 macbook reviews both good and bad in a json array "} }' "https://generativelanguage.googleapis.com/v1beta3/models/text-bison-001:generateText?key=AIzaSyBE-myxHyuWxQHJfIZXLYzILLVghP6nkhA"`;
+export async function getResults(searchTerm = "iphone") {
+  console.log("searchterm:", searchTerm);
+  let request = `curl -H 'Content-Type: application/json' -d '{ "prompt": { "text": "Give me 50 ${searchTerm} reviews both good and bad in a json array with two field rating and review "} }' "https://generativelanguage.googleapis.com/v1beta3/models/text-bison-001:generateText?key=AIzaSyBE-myxHyuWxQHJfIZXLYzILLVghP6nkhA"`;
 
-let answer ;
+  let reviews = [];
 
-let child = exec(request, function(error, stdout, stderr) {
-    
-     let data = JSON.parse(stdout);
-     let stringOne = data.candidates[0].output.replace("```","")
-     let stringTwo = stringOne.replace("json","")
-
-     stringTwo +=`"}]`
-
-     let object = JSON.parse(stringTwo)
-    //  console.log(object)
-    
-     object.map((item)=>console.log(item.review))
-
-    console.log('stderr: ' + stderr);
-
-    if (error !== null) {
-        console.log('exec error: ' + error);
+  let child = exec(request, function (error, stdout, stderr) {
+    let data = JSON.parse(stdout);
+    let jsonString = "";
+    jsonString = data.candidates[0].output; // Accessing the first candidate's output property
+    jsonString = jsonString.replace("```json", "");
+    while (
+      jsonString[jsonString.length - 1] != `"` ||
+      jsonString[jsonString.length - 1] != `'`
+    ) {
+      jsonString = jsonString.slice(0, jsonString.length - 1);
     }
-});
+    jsonString += "}]";
+
+    console.log(jsonString);
+  });
+}
+
+getResults();
