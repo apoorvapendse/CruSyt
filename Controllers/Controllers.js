@@ -1,3 +1,4 @@
+import { getResults } from "../utils/bard.js";
 import { getSentiment } from "../utils/getSentiment.js";
 import { scrape } from "../utils/reddit.js";
 
@@ -12,15 +13,17 @@ export function searchPageGet(req, res) {
 
 //Doing the fetching and analysing of reddit Posts
 export const redditResultsGet = async (req, res) => {
-  let postsObj = await scrape(req.body.searchQuery);
+  let postsObj = await getResults(req.body.searchQuery)
 
-  let returnObj = {};
-  for (let key in postsObj) {
-    let comment = postsObj[key];
-    const sentiment = getSentiment(comment);
-    returnObj[key] = { comment, sentiment };
-  }
-
-  res.json(returnObj);
+  let results = []
+  postsObj.forEach((item)=>{
+    let review = item.review;
+    let sentiment =  getSentiment(review)
+    results.push({
+      review:item.review,
+      sentiment:sentiment
+    })
+  })
+  res.json(results);
 };
 export { homepageGet };

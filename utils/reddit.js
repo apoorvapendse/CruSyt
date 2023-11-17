@@ -4,7 +4,7 @@ import { getResults } from "./bard.js";
 
 export async function scrape(searchTerm) {
   let reviews = await getResults(searchTerm);
-  console.log("fetched reviews:", reviews);
+  console.log("reviews:",reviews);
   return reviews;
 }
 
