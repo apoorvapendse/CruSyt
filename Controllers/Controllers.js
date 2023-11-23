@@ -19,9 +19,17 @@ export const redditResultsGet = async (req, res) => {
   postsObj.forEach((item)=>{
     let review = item.review;
     let sentiment =  getSentiment(review)
+    let category="bad"
+    if(sentiment>=0){
+      category = "good"
+    }
+    else if(sentiment>= -0.2 ){
+        category = "neutral"
+    }
     results.push({
       review:item.review,
-      sentiment:sentiment
+      sentiment:sentiment,
+      category
     })
   })
   res.json(results);
