@@ -7,6 +7,11 @@
   </head>
   <body>
     <h1>Dashboard</h1>
+    <ul>
+      <% for (let i = 0; i < results.length; i++) { %>
+        <li><%= JSON.stringify(results[i].review) %></li>
+      <% } %>
+    </ul>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js" integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </body>
