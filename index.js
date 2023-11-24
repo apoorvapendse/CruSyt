@@ -7,6 +7,7 @@ const app = express();
 app.use(express.json()); // for parsing JSON data
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(path.resolve(), "public"))); //all css files and images will be in public folder
+app.use("view engine","ejs")
 //to handle data from cookies
 
 app.use("/", router);
