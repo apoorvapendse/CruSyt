@@ -1,76 +1,76 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="styles/dashboard.css" />
-  </head>
-
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <!-- Link your local stylesheet (dashboard.css) here -->
+  <link rel="stylesheet" href="styles/dashboard.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+</head>
+<body>
+  <!-- Dashboard Container -->
+  <div class="dashboard-container">
+    <!-- Header -->
     <h1>Dashboard</h1>
-    <div class="review-container">
-      <ul class="review-list">
-        <% for (let i=0; i < results.length; i++) { %>
-        <li><%= JSON.stringify(results[i].review) %></li>
-        <% } %>
-      </ul>
-    </div>
+  </div>
 
-    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+  <!-- Display reviews -->
+  <div class="review-container">
+    <ul class="review-list">
+      <% for (let i = 0; i < results.length; i++) { %>
+        <li><%= results[i].review %></li>
+      <% } %>
+    </ul>
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <script>
-        // Access EJS variable in the script tag
-        var revs = <%- JSON.stringify(results) %>;
+  <!-- Add larger canvas for the pie chart -->
+  <div class="chart-container">
+    <canvas id="categoryChart"></canvas>
+  </div>
 
-        // Now you can use ejsVariable in your JavaScript code
-        console.log(revs);
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-        var xValues = ["excellent", "good", "neutral", "bad", "very bad"];
-        let yValues =[0,0,0,0,0];
-         revs.forEach((item)=>{
-          if(item.category==='excellent'){
-            yValues[0]++;
-          }
-          else if(item.category==='good'){
-            yValues[1]++;
-          }
-          else if(item.category==='neutral'){
-            yValues[2]++;
-          }
-          else if(item.category==='bad'){
-            yValues[3]++;
-          }
-          else if(item.category==='very bad'){
-            yValues[4]++;
-          }
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Access EJS variable in the script tag
+      var revs = <%- JSON.stringify(results) %>;
 
-        })
+      // Process the results to get the category frequencies
+      const categoryCounts = revs.reduce((acc, result) => {
+        acc[result.category] = (acc[result.category] || 0) + 1;
+        return acc;
+      }, {});
 
-      console.log("yvals:",yValues);
-      var barColors = ["red", "green", "blue", "orange", "brown"];
+      // Extract labels and data for Chart.js
+      const labels = Object.keys(categoryCounts);
+      const data = Object.values(categoryCounts);
 
-      const ctx = document.getElementById('myChart').getContext("2d");
-      new Chart(ctx, {
-        type: "bar",
+      // Get the larger canvas element
+      const ctx = document.getElementById("categoryChart").getContext("2d");
+
+      // Create the larger pie chart with options
+      const categoryChart = new Chart(ctx, {
+        type: "pie",
         data: {
-          labels: xValues,
+          labels: labels,
           datasets: [
             {
-              backgroundColor: barColors,
-              data: yValues,
+              data: data,
+              backgroundColor: ["#36a2eb", "#4caf50", "#ffc107", "#f44336", "#9c27b0"],
             },
           ],
         },
         options: {
-          legend: { display: false },
-          title: {
-            display: true,
-            text: "Bar Graph",
+          legend: {
+            display: false,
           },
         },
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
 </html>
+
+

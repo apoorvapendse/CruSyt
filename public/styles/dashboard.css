@@ -1,15 +1,87 @@
+/* Add your custom CSS styles here */
 
-
-.review-list{
-    padding-top:60px;
+/* Reset and Common Styles */
+* {
     box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-   
-    height: 50%;
-    border:1px solid ;
-    width:50%;
-    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
 }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+    padding: 20px;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50; /* Choose your desired text color */
+}
+
+/* Dashboard Container Styles */
+.dashboard-container {
+    background-color: #3498db; /* Choose your desired background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Container for Review and Chart */
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Review Container Styles */
+.review-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    max-height: 600px;
+    overflow-y: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 48%; /* Adjust the width as needed */
+}
+
+.review-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.review-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Chart Container Styles */
+.chart-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+/* Larger Canvas Styles */
+#categoryChart {
+    width: 500px; /* Occupy 100% of the container */
+    height: 500px;
+}
+
+/* Move the chart container to top right */
+.chart-container {
+    position: absolute;
+    top: 140px;
+    right: 100px;
+}
+
