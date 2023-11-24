@@ -1,26 +1,37 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="styles/dashboard.css">
-  </head>
-  <body>
-    <h1>Dashboard</h1>
-    <div class="review-container">
 
-      <ul class="review-list">
-        <% for (let i = 0; i < results.length; i++) { %>
-          <li><%= JSON.stringify(results[i].review) %></li>
-          <% } %>
-        </ul>
-      </div>
-      
-      <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-      <script src="/scripts/chart.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles/dashboard.css">
+</head>
 
-  </body>
+<body>
+  <h1>Dashboard</h1>
+  <div class="review-container">
+
+    <ul class="review-list">
+      <% for (let i=0; i < results.length; i++) { %>
+        <li>
+          <%= JSON.stringify(results[i].review) %>
+        </li>
+        <% } %>
+    </ul>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js" type="module"
+    integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+<script>
+  // Access EJS variable in the script tag
+  var revs = <%- JSON.stringify(results) %>;
+
+  // Now you can use ejsVariable in your JavaScript code
+  console.log(revs);
+</script>
+</body>
+
 </html>
