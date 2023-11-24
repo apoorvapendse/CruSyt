@@ -48,6 +48,6 @@ export const redditResultsGet = async (req, res) => {
     })
   })
   // res.json(results);
-  res.send('dashboard.ejs')
+  res.render('dashboard.ejs',{results:results})
 };
 export { homepageGet };
