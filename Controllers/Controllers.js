@@ -23,7 +23,7 @@ export const redditResultsGet = async (req, res) => {
 
 
     //analysing category by the sentiment index
-    if(sentiment>=0.4){
+    if(sentiment>=0.3){
       category="excellent"
     }
     if(sentiment>=0.2){
