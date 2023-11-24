@@ -13,41 +13,41 @@ export function searchPageGet(req, res) {
 
 //Doing the fetching and analysing of reddit Posts
 export const redditResultsGet = async (req, res) => {
-  let postsObj = await getResults(req.body.searchQuery)
+  // let postsObj = await getResults(req.body.searchQuery)
 
-  let results = []
-  postsObj.forEach((item)=>{
-    let review = item.review;
-    let sentiment =  getSentiment(review)
-    let category=""
+  // let results = []
+  // postsObj.forEach((item)=>{
+  //   let review = item.review;
+  //   let sentiment =  getSentiment(review)
+  //   let category=""
 
 
-    //analysing category by the sentiment index
-    if(sentiment>=0.4){
-      category="excellent"
-    }
-    if(sentiment>=0.2){
-      category="good"
-    }
-    else if(sentiment>=-0.1){
-      category = "neutral"
-    }
-    else if(sentiment>= -0.4 ){
-        category = "bad"
-    }
-    else if(sentiment< -0.4 ){
-        category = "very bad"
-    }
+  //   //analysing category by the sentiment index
+  //   if(sentiment>=0.4){
+  //     category="excellent"
+  //   }
+  //   if(sentiment>=0.2){
+  //     category="good"
+  //   }
+  //   else if(sentiment>=-0.1){
+  //     category = "neutral"
+  //   }
+  //   else if(sentiment>= -0.4 ){
+  //       category = "bad"
+  //   }
+  //   else if(sentiment< -0.4 ){
+  //       category = "very bad"
+  //   }
 
 
     
-    results.push({
-      review:item.review,
-      sentiment:sentiment,
-      category
-    })
-  })
+  //   results.push({
+  //     review:item.review,
+  //     sentiment:sentiment,
+  //     category
+  //   })
+  // })
   // res.json(results);
-  res.send('dashboard.ejs')
+  res.render('dashboard.ejs')
 };
 export { homepageGet };
