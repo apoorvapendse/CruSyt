@@ -17,13 +17,9 @@
       </ul>
     </div>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"
-      type="module"
-      integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script>
         // Access EJS variable in the script tag
         var revs = <%- JSON.stringify(results) %>;
@@ -32,7 +28,7 @@
         console.log(revs);
 
         var xValues = ["excellent", "good", "neutral", "bad", "very bad"];
-        let yValues =[];
+        let yValues =[0,0,0,0,0];
          revs.forEach((item)=>{
           if(item.category==='excellent'){
             yValues[0]++;
@@ -49,13 +45,14 @@
           else if(item.category==='very bad'){
             yValues[4]++;
           }
-          
+
         })
-      
+
       console.log("yvals:",yValues);
       var barColors = ["red", "green", "blue", "orange", "brown"];
 
-      new Chart("myChart", {
+      const ctx = document.getElementById('myChart').getContext("2d");
+      new Chart(ctx, {
         type: "bar",
         data: {
           labels: xValues,
@@ -70,7 +67,7 @@
           legend: { display: false },
           title: {
             display: true,
-            text: "World Wine Production 2018",
+            text: "Bar Graph",
           },
         },
       });
