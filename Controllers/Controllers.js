@@ -47,6 +47,7 @@ export const redditResultsGet = async (req, res) => {
       category
     })
   })
-  res.json(results);
+  // res.json(results);
+  res.send('dashboard.ejs')
 };
 export { homepageGet };
