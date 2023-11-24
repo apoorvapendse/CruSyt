@@ -31,8 +31,27 @@
         // Now you can use ejsVariable in your JavaScript code
         console.log(revs);
 
-        var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-      var yValues = revs.map((item)=>item.sentiment)
+        var xValues = ["excellent", "good", "neutral", "bad", "very bad"];
+        let yValues =[];
+         revs.forEach((item)=>{
+          if(item.category==='excellent'){
+            yValues[0]++;
+          }
+          else if(item.category==='good'){
+            yValues[1]++;
+          }
+          else if(item.category==='neutral'){
+            yValues[2]++;
+          }
+          else if(item.category==='bad'){
+            yValues[3]++;
+          }
+          else if(item.category==='very bad'){
+            yValues[4]++;
+          }
+          
+        })
+      
       console.log("yvals:",yValues);
       var barColors = ["red", "green", "blue", "orange", "brown"];
 
