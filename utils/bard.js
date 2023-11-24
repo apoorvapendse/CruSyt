@@ -3,7 +3,7 @@ import { exec } from "child_process";
 export async function getResults(searchTerm) {
   if (searchTerm === undefined) return;
   console.log("searchterm:", searchTerm);
-  const request = `curl -H "Content-Type: application/json" -d "{ \\"prompt\\": { \\"text\\": \\"Give me 50 ${searchTerm} reviews both good and bad in a json array with two field rating and review \\" } }" "https://generativelanguage.googleapis.com/v1beta3/models/text-bison-001:generateText?key=AIzaSyBE-myxHyuWxQHJfIZXLYzILLVghP6nkhA"`;
+  const request = `curl -H "Content-Type: application/json" -d "{ \\"prompt\\": { \\"text\\": \\"Give me minimum 20 ${searchTerm} reviews both good and bad in a json array with two field rating and review \\" } }" "https://generativelanguage.googleapis.com/v1beta3/models/text-bison-001:generateText?key=AIzaSyBE-myxHyuWxQHJfIZXLYzILLVghP6nkhA"`;
   let reviews = [];
 
   // The await keyword can only be used with functions
