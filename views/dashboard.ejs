@@ -42,10 +42,13 @@
         acc[result.category] = (acc[result.category] || 0) + 1;
         return acc;
       }, {});
+      
 
       // Extract labels and data for Chart.js
       const labels = Object.keys(categoryCounts);
       const data = Object.values(categoryCounts);
+
+      
 
       // Get the larger canvas element
       const ctx = document.getElementById("categoryChart").getContext("2d");
